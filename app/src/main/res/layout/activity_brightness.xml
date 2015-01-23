@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg" >
+
+    <LinearLayout
+        android:id="@+id/topLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="@color/transparant"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:weightSum="5" >
+
+        <ImageView
+            android:id="@+id/iv_cancle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:contentDescription="@string/app_name"
+            android:gravity="left"
+            android:src="@drawable/ic_cross" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:gravity="center"
+            android:text="@string/briteness"
+            android:textColor="@android:color/white"
+            android:textSize="35sp" />
+
+        <ImageView
+            android:id="@+id/iv_savebrighess"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:contentDescription="@string/app_name"
+            android:gravity="right"
+            android:src="@drawable/ic_check" />
+    </LinearLayout>
+
+    <!-- <RelativeLayout -->
+    <!-- android:id="@+id/imgLayout" -->
+    <!-- android:layout_width="wrap_content" -->
+    <!-- android:layout_height="wrap_content" -->
+    <!-- android:layout_above="@+id/lineBottom" -->
+    <!-- android:layout_below="@+id/topLayout" -->
+    <!-- android:background="@android:color/white" > -->
+
+
+    <!-- <ImageView -->
+    <!-- android:id="@+id/ivImageBrightness" -->
+    <!-- android:layout_width="wrap_content" -->
+    <!-- android:layout_height="wrap_content" -->
+    <!-- android:layout_centerHorizontal="true" -->
+    <!-- android:contentDescription="@string/app_name" -->
+    <!-- android:padding="5dp" -->
+    <!-- android:src="@drawable/img" /> -->
+    <!-- </RelativeLayout> -->
+
+    <ImageView
+        android:id="@+id/ivImageBrightness"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/lineBottom"
+        android:layout_below="@+id/topLayout"
+        android:layout_centerInParent="true"
+        android:background="@android:color/white"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/ic_brightness" />
+
+    <View
+        android:id="@+id/lineBottom"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_above="@+id/bottomLayout"
+        android:background="#CD853f" />
+
+    <LinearLayout
+        android:id="@+id/bottomLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/transparant"
+        android:gravity="left"
+        android:orientation="vertical"
+        android:weightSum="5" >
+
+        <LinearLayout
+            android:id="@+id/llCheckboxes"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal"
+            android:gravity="right"
+            android:weightSum="3" >
+
+<!--             <LinearLayout -->
+<!--                 android:layout_width="wrap_content" -->
+<!--                 android:layout_height="wrap_content" -->
+<!--                 android:layout_weight="2" -->
+<!--                 android:gravity="center" -->
+<!--                 android:orientation="horizontal" > -->
+
+<!--                 <CheckBox -->
+<!--                     android:id="@+id/chkAutoLevel" -->
+<!--                     android:layout_width="wrap_content" -->
+<!--                     android:layout_height="wrap_content" -->
+<!--                     android:button="@drawable/checkbox" /> -->
+
+<!--                 <TextView -->
+<!--                     android:id="@+id/tvAutoLevel" -->
+<!--                     android:layout_width="wrap_content" -->
+<!--                     android:layout_height="wrap_content" -->
+<!--                     android:layout_marginLeft="5dp" -->
+<!--                     android:text="Auto Level" -->
+<!--                     android:textColor="@android:color/white" /> -->
+<!--             </LinearLayout> -->
+
+<!--             <LinearLayout -->
+<!--                 android:layout_width="wrap_content" -->
+<!--                 android:layout_height="wrap_content" -->
+<!--                 android:layout_weight="1" -->
+<!--                 android:gravity="left" -->
+<!--                 android:orientation="horizontal" > -->
+
+<!--                 <CheckBox -->
+<!--                     android:id="@+id/chlAutoWhiteBalance" -->
+<!--                     android:layout_width="wrap_content" -->
+<!--                     android:layout_height="wrap_content" -->
+<!--                     android:button="@drawable/checkbox" /> -->
+
+<!--                 <TextView -->
+<!--                     android:id="@+id/tvAutoWhiteBalance" -->
+<!--                     android:layout_width="wrap_content" -->
+<!--                     android:layout_height="wrap_content" -->
+<!--                     android:layout_marginLeft="5dp" -->
+<!--                     android:text="Auto White Balance" -->
+<!--                     android:textColor="@android:color/white" /> -->
+<!--             </LinearLayout> -->
+
+            <ImageView
+                android:id="@+id/ivResetBrightBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:contentDescription="@string/app_name"
+                android:onClick="onBrightnessClick"
+                android:src="@drawable/ic_undo" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp" >
+
+            <TextView
+                android:id="@+id/tvBrightness"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:text="@string/briteness"
+                android:textColor="@android:color/white" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_toRightOf="@+id/tvBrightness"
+                android:background="@drawable/seekbar_bg_trans" >
+
+                <SeekBar
+                    android:id="@+id/seekBarBrightness"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:progressDrawable="@drawable/seekbar_brightness"
+                    android:secondaryProgress="0"
+                    android:thumb="@drawable/seekbar_thumb" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp" >
+
+            <TextView
+                android:id="@+id/tvContrast"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:text="Contrast"
+                android:textColor="@android:color/white" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_toRightOf="@+id/tvContrast"
+                android:background="@drawable/seekbar_bg_trans" >
+
+                <SeekBar
+                    android:id="@+id/seekBarContrast"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:progressDrawable="@drawable/seekbar_contrast"
+                    android:secondaryProgress="0"
+                    android:thumb="@drawable/seekbar_thumb" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp" >
+
+            <TextView
+                android:id="@+id/tvSaturation"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:text="Saturation"
+                android:textColor="@android:color/white" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_toRightOf="@+id/tvSaturation"
+                android:background="@drawable/seekbar_bg_trans" >
+
+                <SeekBar
+                    android:id="@+id/seekBarSaturation"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:progressDrawable="@drawable/seekbar_saturation"
+                    android:secondaryProgress="0"
+                    android:thumb="@drawable/seekbar_thumb" />
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+</RelativeLayout>

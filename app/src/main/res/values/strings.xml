@@ -1,0 +1,10 @@
+<resources>
+
+    <!-- app icon color CD853f -->
+    <string name="app_name">CamEffects</string>
+    <string name="effects">FX Effects</string>
+    <string name="crop">Crop</string>
+    <string name="briteness">Brightness</string>
+    <string name="text">Add Text</string>
+
+</resources>
