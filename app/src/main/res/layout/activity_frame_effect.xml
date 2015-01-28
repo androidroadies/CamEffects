@@ -3,7 +3,7 @@
     android:id="@+id/mainLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white" >
+    android:background="@android:color/white">
 
     <LinearLayout
         android:id="@+id/topLayout"
@@ -13,7 +13,7 @@
         android:background="@color/transparant"
         android:gravity="center"
         android:orientation="horizontal"
-        android:weightSum="5" >
+        android:weightSum="5">
 
         <ImageView
             android:id="@+id/iv_cross"
@@ -51,7 +51,7 @@
         android:layout_above="@+id/bottomLayout"
         android:layout_below="@+id/topLayout"
         android:layout_centerInParent="true"
-        android:background="@android:color/white" >
+        android:background="@android:color/white">
 
         <!-- <LinearLayout -->
         <!-- android:id="@+id/llCropBoxContainer" -->
@@ -119,20 +119,20 @@
         android:background="@color/transparant"
         android:gravity="center"
         android:orientation="horizontal"
-        android:weightSum="5" >
+        android:weightSum="5">
 
         <HorizontalScrollView
             android:id="@+id/hsvFramesBar"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:paddingTop="@dimen/framesIcMarginTop"
-            android:visibility="visible" >
+            android:visibility="visible">
 
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:gravity="top"
-                android:orientation="horizontal" >
+                android:orientation="horizontal">
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -344,4 +344,5 @@
         </HorizontalScrollView>
     </LinearLayout>
 
+    <include layout="@layout/mergelayout" />
 </RelativeLayout>

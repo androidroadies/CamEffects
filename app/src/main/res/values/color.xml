@@ -2,5 +2,8 @@
 <resources>
 
     <color name="transparant">#E6000000</color>
+    <color name="pink_transparent_60">#99FF4181</color>
+    <color name="pink_transparent_70">#69FF4181</color>
+    <color name="pink">#FF4181</color>
 
 </resources>

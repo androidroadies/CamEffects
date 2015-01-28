@@ -16,44 +16,16 @@
 
 package com.kal.cropboxapi;
 
-import android.app.Activity;
 import android.os.Bundle;
+
+import com.multidots.cameffects.BaseActivity;
 
 import java.util.ArrayList;
 
-public class MonitoredActivity extends Activity {
+public class MonitoredActivity extends BaseActivity {
 
     private final ArrayList<LifeCycleListener> mListeners =
             new ArrayList<LifeCycleListener>();
-
-    public static interface LifeCycleListener {
-        public void onActivityCreated(MonitoredActivity activity);
-        public void onActivityDestroyed(MonitoredActivity activity);
-        public void onActivityPaused(MonitoredActivity activity);
-        public void onActivityResumed(MonitoredActivity activity);
-        public void onActivityStarted(MonitoredActivity activity);
-        public void onActivityStopped(MonitoredActivity activity);
-    }
-
-    public static class LifeCycleAdapter implements LifeCycleListener {
-        public void onActivityCreated(MonitoredActivity activity) {
-        }
-
-        public void onActivityDestroyed(MonitoredActivity activity) {
-        }
-
-        public void onActivityPaused(MonitoredActivity activity) {
-        }
-
-        public void onActivityResumed(MonitoredActivity activity) {
-        }
-
-        public void onActivityStarted(MonitoredActivity activity) {
-        }
-
-        public void onActivityStopped(MonitoredActivity activity) {
-        }
-    }
 
     public void addLifeCycleListener(LifeCycleListener listener) {
         if (mListeners.contains(listener)) return;
@@ -93,6 +65,40 @@ public class MonitoredActivity extends Activity {
         super.onStop();
         for (LifeCycleListener listener : mListeners) {
             listener.onActivityStopped(this);
+        }
+    }
+
+    public static interface LifeCycleListener {
+        public void onActivityCreated(MonitoredActivity activity);
+
+        public void onActivityDestroyed(MonitoredActivity activity);
+
+        public void onActivityPaused(MonitoredActivity activity);
+
+        public void onActivityResumed(MonitoredActivity activity);
+
+        public void onActivityStarted(MonitoredActivity activity);
+
+        public void onActivityStopped(MonitoredActivity activity);
+    }
+
+    public static class LifeCycleAdapter implements LifeCycleListener {
+        public void onActivityCreated(MonitoredActivity activity) {
+        }
+
+        public void onActivityDestroyed(MonitoredActivity activity) {
+        }
+
+        public void onActivityPaused(MonitoredActivity activity) {
+        }
+
+        public void onActivityResumed(MonitoredActivity activity) {
+        }
+
+        public void onActivityStarted(MonitoredActivity activity) {
+        }
+
+        public void onActivityStopped(MonitoredActivity activity) {
         }
     }
 }

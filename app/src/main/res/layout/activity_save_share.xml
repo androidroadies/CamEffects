@@ -3,17 +3,17 @@
     android:id="@+id/mainLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg" >
+    android:background="@drawable/bg">
 
     <LinearLayout
         android:id="@+id/topLayout"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:background="@color/transparant"
+        android:background="@color/pink"
         android:gravity="right"
         android:orientation="horizontal"
-        android:padding="5dp" >
+        android:padding="10dp">
 
         <ImageView
             android:id="@+id/iv_save"
@@ -31,7 +31,8 @@
         android:layout_above="@+id/lineBottom"
         android:layout_below="@+id/topLayout"
         android:layout_centerInParent="true"
-        android:background="@android:color/white"
+        android:layout_margin="20dp"
+        android:background="@android:color/transparent"
         android:contentDescription="@string/app_name"
         android:src="@drawable/ic_brightness" />
 
@@ -62,33 +63,49 @@
         android:layout_above="@+id/bottomLayout"
         android:background="#CD853f" />
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/bottomLayout"
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:background="@color/transparant"
+        android:layout_above="@+id/llAd"
+        android:background="@color/pink_transparent_70"
         android:orientation="horizontal"
-        android:padding="5dp"
-        android:weightSum="2" >
+        android:padding="5dp">
 
         <ImageView
             android:id="@+id/iv_share"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"
-            android:layout_weight="1"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_toLeftOf="@+id/center_view"
+            android:background="@drawable/circle_black"
             android:contentDescription="@string/app_name"
+            android:gravity="center"
+            android:padding="40px"
             android:src="@drawable/ic_share" />
+
+        <View
+            android:id="@+id/center_view"
+            android:layout_width="1dp"
+            android:layout_height="1dp"
+            android:layout_centerHorizontal="true" />
 
         <ImageView
             android:id="@+id/iv_home"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"
-            android:layout_weight="1"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_toRightOf="@+id/center_view"
+            android:background="@drawable/circle_black"
             android:contentDescription="@string/app_name"
+            android:gravity="center"
+            android:padding="40px"
             android:src="@drawable/ic_home" />
-    </LinearLayout>
+    </RelativeLayout>
 
+    <include
+        android:id="@+id/llAd"
+        layout="@layout/mergelayout" />
 </RelativeLayout>

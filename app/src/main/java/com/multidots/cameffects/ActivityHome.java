@@ -1,6 +1,5 @@
 package com.multidots.cameffects;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
@@ -21,22 +20,21 @@ import android.widget.Toast;
 import java.io.File;
 import java.io.IOException;
 
-public class ActivityHome extends Activity {
-	Context context;
-	ImageView icCamera, icGallary/* , ivMore */;
-	boolean cameraUpdate = false;
-	private File outputFilePath;
-	private static final int ACTION_REQUEST_CAMERA = 1004,
+public class ActivityHome extends BaseActivity {
+    private static final int ACTION_REQUEST_CAMERA = 1004,
 			RESULT_LOAD_IMAGE = 1;
-	Cursor cursor = null;
-	int dWidth = 10, dHeight = 10;
-
-	private static final int ID_UP = 1;
-	private static final int ID_DOWN = 2;
-	private static final int ID_SEARCH = 3;
-	private static final int ID_INFO = 4;
-	private static final int ID_ERASE = 5;
-	private static final int ID_OK = 6;
+    private static final int ID_UP = 1;
+    private static final int ID_DOWN = 2;
+    private static final int ID_SEARCH = 3;
+    private static final int ID_INFO = 4;
+    private static final int ID_ERASE = 5;
+    private static final int ID_OK = 6;
+    Context context;
+    ImageView icCamera, icGallary/* , ivMore */;
+    boolean cameraUpdate = false;
+    Cursor cursor = null;
+    int dWidth = 10, dHeight = 10;
+    private File outputFilePath;
 
 	@SuppressWarnings("deprecation")
 	@Override
@@ -44,6 +42,9 @@ public class ActivityHome extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_home);
 		context = ActivityHome.this;
+        LoadAdd();
+//        loadInterstitial(null);
+
 		init();
 		Display mDisplay = getWindowManager().getDefaultDisplay();
 		dWidth = mDisplay.getWidth();
@@ -188,13 +189,13 @@ public class ActivityHome extends Activity {
 
 			} else if (resultCode == RESULT_CANCELED) {
 
-				Toast.makeText(this, "Picture was not taken",
-						Toast.LENGTH_SHORT).show();
-			} else {
+//				Toast.makeText(this, "Picture was not taken",
+//						Toast.LENGTH_SHORT).show();
+            } else {
 
-				Toast.makeText(this, "Picture was not taken",
-						Toast.LENGTH_SHORT).show();
-			}
+//				Toast.makeText(this, "Picture was not taken",
+//						Toast.LENGTH_SHORT).show();
+            }
 
 		} else {
 
@@ -301,4 +302,10 @@ public class ActivityHome extends Activity {
 		icGallary = (ImageView) findViewById(R.id.icGallary);
 		// ivMore = (ImageView) findViewById(R.id.ivMore);
 	}
+
+    @Override
+    public void onBackPressed() {
+        loadInterstitial(null);
+        super.onBackPressed();
+    }
 }

@@ -3,32 +3,39 @@
     android:id="@+id/mainLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_repeat" >
+    android:background="@android:color/white">
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/lLayout"
-        android:layout_width="fill_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:gravity="center"
-        android:orientation="horizontal" >
+        android:orientation="horizontal">
 
         <ImageView
             android:id="@+id/icCamera"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/icGallary"
+            android:layout_alignTop="@+id/icGallary"
             android:layout_marginRight="20dp"
+            android:background="@drawable/circle_pink"
             android:contentDescription="@string/app_name"
-            android:src="@drawable/ic_camera" />
+            android:padding="30dp"
+            android:src="@drawable/cam_icon" />
 
         <ImageView
             android:id="@+id/icGallary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/icCamera"
+            android:background="@drawable/circle_pink"
             android:contentDescription="@string/app_name"
-            android:src="@drawable/ic_gallary" />
-    </LinearLayout>
+            android:padding="30dp"
+            android:src="@drawable/gallary" />
+    </RelativeLayout>
 
     <TextView
         android:id="@+id/tvTitle"
@@ -36,22 +43,23 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="42dp"
-        android:text="@string/app_name"
+        android:background="@color/pink"
         android:gravity="center"
-        android:background="@color/transparant"
+        android:padding="5dp"
+        android:text="CAMEFFECTS"
         android:textColor="@android:color/white"
         android:textSize="35sp" />
 
-<!--     <ImageView -->
-<!--         android:id="@+id/ivMore" -->
-<!--         android:layout_width="wrap_content" -->
-<!--         android:layout_height="wrap_content" -->
-<!--         android:layout_alignParentBottom="true" -->
-<!--         android:layout_alignParentRight="true" -->
-<!--         android:layout_marginBottom="10dp" -->
-<!--         android:layout_marginRight="20dp" -->
-<!--         android:contentDescription="@string/app_name" -->
-<!--         android:src="@drawable/ic_more" /> -->
+    <!--     <ImageView -->
+    <!--         android:id="@+id/ivMore" -->
+    <!--         android:layout_width="wrap_content" -->
+    <!--         android:layout_height="wrap_content" -->
+    <!--         android:layout_alignParentBottom="true" -->
+    <!--         android:layout_alignParentRight="true" -->
+    <!--         android:layout_marginBottom="10dp" -->
+    <!--         android:layout_marginRight="20dp" -->
+    <!--         android:contentDescription="@string/app_name" -->
+    <!--         android:src="@drawable/ic_more" /> -->
 
+    <include layout="@layout/mergelayout" />
 </RelativeLayout>

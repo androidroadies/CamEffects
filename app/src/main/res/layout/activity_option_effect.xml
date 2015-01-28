@@ -1,84 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/mainLayout"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:background="@android:color/white" >
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
 
     <ImageView
         android:id="@+id/iv_Main"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:background="@android:color/white"
-        android:contentDescription="@string/app_name"
-        android:layout_above="@+id/lineBottom"
+        android:layout_above="@+id/bottomLayout"
         android:layout_below="@+id/topLayout"
         android:layout_centerInParent="true"
+        android:layout_margin="20dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/app_name"
         android:src="@drawable/ic_brightness" />
 
-    <View
-        android:id="@+id/lineBottom"
-        android:layout_width="fill_parent"
-        android:layout_height="1dp"
-        android:layout_above="@+id/bottomLayout"
-        android:background="#CD853f" />
 
     <LinearLayout
         android:id="@+id/bottomLayout"
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:background="@color/transparant"
+        android:layout_above="@+id/llAd"
+        android:background="@color/pink_transparent_70"
         android:gravity="center"
-        android:padding="10dp"
         android:orientation="horizontal"
-        android:weightSum="5" >
+        android:padding="4dp">
 
         <ImageView
             android:id="@+id/iv_crop"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/circle_black"
             android:contentDescription="@string/app_name"
             android:gravity="left"
-            android:src="@drawable/ic_crop" />
+            android:padding="40px"
+            android:src="@drawable/crop" />
 
         <ImageView
             android:id="@+id/iv_effects"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/circle_black"
             android:contentDescription="@string/app_name"
             android:gravity="left"
-            android:src="@drawable/ic_effect" />
+            android:padding="40px"
+            android:src="@drawable/fx" />
 
         <ImageView
             android:id="@+id/iv_color"
-            android:layout_width="36dp"
-            android:layout_height="36dp"
-            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/circle_black"
             android:contentDescription="@string/app_name"
             android:gravity="left"
-            android:src="@drawable/ic_brightness" />
+            android:padding="40px"
+            android:src="@drawable/brightness" />
 
         <ImageView
             android:id="@+id/iv_frames"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/circle_black"
             android:contentDescription="@string/app_name"
             android:gravity="left"
-            android:src="@drawable/ic_frame" />
+            android:padding="40px"
+            android:src="@drawable/frame"
+            android:visibility="gone" />
 
         <ImageView
             android:id="@+id/iv_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/circle_black"
             android:contentDescription="@string/app_name"
             android:gravity="left"
-            android:src="@drawable/ic_text" />
+            android:padding="40px"
+            android:src="@drawable/text" />
     </LinearLayout>
 
     <LinearLayout
@@ -87,10 +96,11 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
+        android:background="@color/pink"
         android:gravity="center"
         android:orientation="horizontal"
-        android:background="@color/transparant"
-        android:weightSum="5" >
+        android:padding="10dp"
+        android:weightSum="5">
 
         <ImageView
             android:id="@+id/iv_back"
@@ -99,7 +109,8 @@
             android:layout_weight="1"
             android:contentDescription="@string/app_name"
             android:gravity="left"
-            android:src="@drawable/ic_left" />
+            android:src="@drawable/ic_left"
+            android:visibility="invisible" />
 
         <TextView
             android:id="@+id/tvTitle"
@@ -107,7 +118,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="3"
             android:gravity="center"
-            android:text="@string/app_name"
+            android:text="CAMEFFECTS"
             android:textColor="@android:color/white"
             android:textSize="35sp" />
 
@@ -118,7 +129,11 @@
             android:layout_weight="1"
             android:contentDescription="@string/app_name"
             android:gravity="right"
-            android:src="@drawable/ic_right" />
+            android:src="@drawable/ic_right"
+            android:visibility="visible" />
     </LinearLayout>
 
+    <include
+        android:id="@+id/llAd"
+        layout="@layout/mergelayout" />
 </RelativeLayout>

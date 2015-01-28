@@ -1,6 +1,5 @@
 package com.multidots.cameffects;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
@@ -25,7 +24,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-public class ActivitySaveShare extends Activity {
+public class ActivitySaveShare extends BaseActivity {
     Context context;
     Bitmap sourceBitmap;
     ImageView ivImagea, iv_share, iv_home, iv_save;
@@ -34,10 +33,28 @@ public class ActivitySaveShare extends Activity {
 
     // private int resIdFrame;
 
+    public static Bitmap scaleBitmap(Bitmap bitmap, int wantedWidth,
+                                     int wantedHeight) {
+        if (bitmap.getWidth() == wantedWidth) {
+            return bitmap;
+        }
+
+        Bitmap output = Bitmap.createBitmap(wantedWidth, wantedHeight,
+                Config.ARGB_8888);
+        Canvas canvas = new Canvas(output);
+        Matrix m = new Matrix();
+        m.setScale((float) wantedWidth / bitmap.getWidth(),
+                (float) wantedHeight / bitmap.getHeight());
+        canvas.drawBitmap(bitmap, m, new Paint());
+
+        return output;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_save_share);
+        LoadAdd();
 
         if (AppConfig.isOrigenal)
             sourceBitmap = AppConfig.mOrigenalBitmap;
@@ -66,7 +83,7 @@ public class ActivitySaveShare extends Activity {
             public void onClick(View v) {
                 if (f != null) {
                     sendIntent();
-                }else{
+                } else {
                     saveAndShareBitmap();
                 }
             }
@@ -77,6 +94,7 @@ public class ActivitySaveShare extends Activity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, ActivityHome.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
                 finish();
             }
@@ -133,17 +151,17 @@ public class ActivitySaveShare extends Activity {
                     Toast.LENGTH_SHORT).show();
             AppConfig.imageName = f.getName();
 
-            Intent intent = new Intent(context,
-                    ActivityOptionsIntents.class);
-            startActivity(intent);
+//            Intent intent = new Intent(context,
+//                    ActivityOptionsIntents.class);
+//            startActivity(intent);
+            finish();
             overridePendingTransition(android.R.anim.fade_in,
                     android.R.anim.fade_out);
-
+            finish();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-
 
     private void saveAndShareBitmap() {
         Bitmap bitmap;
@@ -180,19 +198,13 @@ public class ActivitySaveShare extends Activity {
             fo.write(bytes.toByteArray());
             fo.close();
             AppConfig.imageName = null;
-                       AppConfig.imageName = f.getName();
+            AppConfig.imageName = f.getName();
 
             sendIntent();
 
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-    private void sendIntent() {
-        final Intent intent = new Intent(Intent.ACTION_SEND);
-        intent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(f));
-        intent.setType("image/png");
-        startActivity(intent);
     }
 
     // private void saveBitmapInGallery() {
@@ -309,21 +321,30 @@ public class ActivitySaveShare extends Activity {
     // }).start();
     // }
 
-    public static Bitmap scaleBitmap(Bitmap bitmap, int wantedWidth,
-                                     int wantedHeight) {
-        if (bitmap.getWidth() == wantedWidth) {
-            return bitmap;
-        }
+    private void sendIntent() {
+        final Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(f));
+        intent.setType("image/png");
+        startActivity(intent);
+    }
 
-        Bitmap output = Bitmap.createBitmap(wantedWidth, wantedHeight,
-                Config.ARGB_8888);
-        Canvas canvas = new Canvas(output);
-        Matrix m = new Matrix();
-        m.setScale((float) wantedWidth / bitmap.getWidth(),
-                (float) wantedHeight / bitmap.getHeight());
-        canvas.drawBitmap(bitmap, m, new Paint());
+    private void initialization() {
 
-        return output;
+        ivImagea = (ImageView) findViewById(R.id.iv_Main);
+
+        iv_share = (ImageView) findViewById(R.id.iv_share);
+        iv_home = (ImageView) findViewById(R.id.iv_home);
+        iv_save = (ImageView) findViewById(R.id.iv_save);
+    }
+
+    @Override
+    public void onBackPressed() {
+        // TODO Auto-generated method stub
+        super.onBackPressed();
+        Intent mIntent = new Intent(getApplicationContext(),
+                ActivityHome.class);
+        mIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(mIntent);
     }
 
     public class SingleMediaScanner implements MediaScannerConnectionClient {
@@ -345,24 +366,5 @@ public class ActivitySaveShare extends Activity {
             mMs.disconnect();
         }
 
-    }
-
-    private void initialization() {
-
-        ivImagea = (ImageView) findViewById(R.id.iv_Main);
-
-        iv_share = (ImageView) findViewById(R.id.iv_share);
-        iv_home = (ImageView) findViewById(R.id.iv_home);
-        iv_save = (ImageView) findViewById(R.id.iv_save);
-    }
-
-    @Override
-    public void onBackPressed() {
-        // TODO Auto-generated method stub
-        super.onBackPressed();
-        Intent mIntent = new Intent(getApplicationContext(),
-                ActivityHome.class);
-        mIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        startActivity(mIntent);
     }
 }

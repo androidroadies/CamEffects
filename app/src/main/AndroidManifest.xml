@@ -2,10 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.multidots.cameffects"
     android:versionCode="1"
-    android:versionName="1.0" >
+    android:versionName="1.0">
 
     <uses-sdk
-        android:minSdkVersion="8"
+        android:minSdkVersion="10"
         android:targetSdkVersion="19" />
 
     <uses-feature android:name="android.hardware.camera" />
@@ -16,17 +16,25 @@
     <uses-feature android:name="android.hardware.camera.autofocus" />
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:largeHeap="true"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
         <activity
-            android:name="com.multidots.cameffects.ActivityHome"
+            android:name=".ActivityHome"
             android:label="@string/app_name"
-            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -34,55 +42,53 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.multidots.cameffects.ActivityOptionsIntents"
+            android:name=".ActivityOptionsIntents"
             android:label="@string/app_name"
-            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
-        </activity>
-        <!--<activity-->
-            <!--android:name="com.multidots.cameffects.ActivityOptionEffect"-->
-            <!--android:label="@string/app_name"-->
-            <!--android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >-->
-        <!--</activity>-->
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <!-- <activity -->
+        <!-- android:name="com.multidots.cameffects.ActivityOptionEffect" -->
+        <!-- android:label="@string/app_name" -->
+        <!-- android:theme="@style/Theme.AppCompat.Light.NoActionBar" > -->
+        <!-- </activity> -->
         <activity
-            android:name="com.multidots.cameffects.ActivityCrop"
+            android:name=".ActivityCrop"
             android:label="@string/app_name"
-            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
-        </activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name="com.multidots.cameffects.ActivityFxEffects"
+            android:name=".ActivityFxEffects"
             android:label="@string/app_name"
-            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
-        </activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name="com.multidots.cameffects.ActivityBrightness"
+            android:name=".ActivityBrightness"
             android:label="@string/app_name"
-            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
-        </activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name="com.multidots.cameffects.ActivitySaveShare"
+            android:name=".ActivitySaveShare"
             android:label="@string/app_name"
-            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
-        </activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name="com.multidots.cameffects.ActivityFrameEffects"
+            android:name=".ActivityFrameEffects"
             android:label="@string/app_name"
-            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
-        </activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name="com.multidots.cameffects.ActivityTextEffects"
+            android:name=".ActivityTextEffects"
             android:label="@string/app_name"
-            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
-        </activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name="com.multidots.cameffects.Activity_addTextHere"
+            android:name=".Activity_addTextHere"
             android:label="@string/app_name"
-            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
-        </activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name="com.multidots.cameffects.ColorPickerActivity"
+            android:name=".ColorPickerActivity"
             android:label="@string/app_name"
-            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
-        </activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name="com.google.android.gms.ads.AdActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:theme="@android:style/Theme.Translucent" />
+        <activity
+            android:name=".BaseActivity"
+            android:label="@string/title_activity_base" />
     </application>
 
 </manifest>

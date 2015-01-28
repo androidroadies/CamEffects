@@ -3,17 +3,18 @@
     android:id="@+id/mainLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg" >
+    android:background="@drawable/bg">
 
     <LinearLayout
         android:id="@+id/topLayout"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:background="@color/transparant"
+        android:background="@color/pink"
         android:gravity="center"
         android:orientation="horizontal"
-        android:weightSum="5" >
+        android:padding="10dp"
+        android:weightSum="5">
 
         <ImageView
             android:id="@+id/iv_back"
@@ -30,7 +31,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="3"
             android:gravity="center"
-            android:text="@string/app_name"
+            android:text="CAMEFFECTS"
             android:textColor="@android:color/white"
             android:textSize="35sp" />
 
@@ -51,7 +52,7 @@
         android:layout_above="@+id/bottomLayout"
         android:layout_below="@+id/topLayout"
         android:layout_centerInParent="true"
-        android:background="@android:color/white" >
+        android:background="@android:color/transparent">
 
         <!-- <LinearLayout -->
         <!-- android:id="@+id/llCropBoxContainer" -->
@@ -75,7 +76,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:background="@android:color/white"
+            android:layout_margin="20dp"
+            android:background="@android:color/transparent"
             android:contentDescription="@string/app_name"
             android:src="@drawable/ic_brightness" />
 
@@ -99,134 +101,98 @@
         android:id="@+id/bottomLayout"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:background="@color/transparant"
+        android:layout_above="@+id/llAd"
+        android:background="@color/pink_transparent_70"
         android:gravity="center"
         android:orientation="horizontal"
-        android:padding="10dp"
-        android:weightSum="5" >
+        android:padding="4dp">
 
         <ImageView
             android:id="@+id/iv_TextRotationBackword"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/circle_black"
             android:contentDescription="@string/app_name"
-            android:gravity="left"
+            android:gravity="center"
+            android:padding="15dp"
             android:src="@drawable/ic_left_rotate" />
 
         <ImageView
             android:id="@+id/iv_TextRotationForword"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/circle_black"
             android:contentDescription="@string/app_name"
-            android:gravity="left"
+            android:gravity="center"
+            android:padding="15dp"
             android:src="@drawable/ic_right_rotate" />
 
         <ImageView
             android:id="@+id/iv_TextAllignment"
-            android:layout_width="36dp"
-            android:layout_height="36dp"
-            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/circle_black"
             android:contentDescription="@string/app_name"
-            android:gravity="left"
+            android:gravity="center"
+            android:padding="15dp"
             android:src="@drawable/ic_color_plate" />
 
         <ImageView
             android:id="@+id/iv_ChangeColor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/circle_black"
             android:contentDescription="@string/app_name"
-            android:gravity="left"
+            android:gravity="center"
+            android:padding="15dp"
             android:src="@drawable/ic_font_minus" />
 
         <ImageView
             android:id="@+id/iv_SizePlus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/circle_black"
             android:contentDescription="@string/app_name"
-            android:gravity="left"
+            android:gravity="center"
+            android:padding="15dp"
             android:src="@drawable/ic_font_plus" />
     </LinearLayout>
 
-</RelativeLayout> <!-- <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" -->
-<!-- android:id="@+id/mainLayout" -->
-<!-- android:layout_width="match_parent" -->
-<!-- android:layout_height="match_parent" -->
-<!-- android:background="@drawable/bg" > -->
+    <include
+        android:id="@+id/llAd"
+        layout="@layout/mergelayout" />
+</RelativeLayout> <!-- <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" --><!-- android:id="@+id/mainLayout" --><!-- android:layout_width="match_parent" --><!-- android:layout_height="match_parent" --><!-- android:background="@drawable/bg" > -->
 
 
-<!-- <TextView -->
-<!-- android:id="@+id/mytv" -->
-<!-- android:layout_width="fill_parent" -->
-<!-- android:layout_height="wrap_content" -->
-<!-- android:layout_alignParentLeft="true" -->
-<!-- android:layout_alignParentTop="true" -->
-<!-- android:text="yasin" /> -->
+    <!-- <TextView --><!-- android:id="@+id/mytv" --><!-- android:layout_width="fill_parent" --><!-- android:layout_height="wrap_content" --><!-- android:layout_alignParentLeft="true" --><!-- android:layout_alignParentTop="true" --><!-- android:text="yasin" /> -->
 
 
-<!-- <Spinner -->
-<!-- android:id="@+id/spinner_category" -->
-<!-- android:layout_width="fill_parent" -->
-<!-- android:layout_height="wrap_content" -->
-<!-- android:layout_below="@+id/mytv" -->
-<!-- android:fitsSystemWindows="true" -->
-<!-- android:spinnerMode="dropdown" /> -->
+    <!-- <Spinner --><!-- android:id="@+id/spinner_category" --><!-- android:layout_width="fill_parent" --><!-- android:layout_height="wrap_content" --><!-- android:layout_below="@+id/mytv" --><!-- android:fitsSystemWindows="true" --><!-- android:spinnerMode="dropdown" /> -->
 
 
-<!-- <Spinner -->
-<!-- android:id="@+id/spinner_fontSize" -->
-<!-- android:layout_width="fill_parent" -->
-<!-- android:layout_height="wrap_content" -->
-<!-- android:layout_below="@+id/spinner_category" -->
-<!-- android:fitsSystemWindows="true" -->
-<!-- android:spinnerMode="dropdown" /> -->
+    <!-- <Spinner --><!-- android:id="@+id/spinner_fontSize" --><!-- android:layout_width="fill_parent" --><!-- android:layout_height="wrap_content" --><!-- android:layout_below="@+id/spinner_category" --><!-- android:fitsSystemWindows="true" --><!-- android:spinnerMode="dropdown" /> -->
 
 
-<!-- <Button -->
-<!-- android:id="@+id/btnSizePlus" -->
-<!-- android:layout_width="wrap_content" -->
-<!-- android:layout_height="wrap_content" -->
-<!-- android:layout_below="@+id/spinner_category" -->
-<!-- android:text="++++++" /> -->
+    <!-- <Button --><!-- android:id="@+id/btnSizePlus" --><!-- android:layout_width="wrap_content" --><!-- android:layout_height="wrap_content" --><!-- android:layout_below="@+id/spinner_category" --><!-- android:text="++++++" /> -->
 
 
-<!-- <Button -->
-<!-- android:id="@+id/btnSizeMinus" -->
-<!-- android:layout_width="wrap_content" -->
-<!-- android:layout_height="wrap_content" -->
-<!-- android:layout_below="@+id/spinner_category" -->
-<!-- android:layout_toRightOf="@+id/btnSizePlus" -->
-<!-- android:text="-" /> -->
-<!-- <Button -->
-<!-- android:id="@+id/btnColorChange" -->
-<!-- android:layout_width="wrap_content" -->
-<!-- android:layout_height="wrap_content" -->
-<!-- android:layout_below="@+id/spinner_category" -->
-<!-- android:layout_toRightOf="@+id/btnSizeMinus" -->
-<!-- android:text="Color" /> -->
+    <!-- <Button --><!-- android:id="@+id/btnSizeMinus" --><!-- android:layout_width="wrap_content" --><!-- android:layout_height="wrap_content" --><!-- android:layout_below="@+id/spinner_category" --><!-- android:layout_toRightOf="@+id/btnSizePlus" --><!-- android:text="-" /> --><!-- <Button --><!-- android:id="@+id/btnColorChange" --><!-- android:layout_width="wrap_content" --><!-- android:layout_height="wrap_content" --><!-- android:layout_below="@+id/spinner_category" --><!-- android:layout_toRightOf="@+id/btnSizeMinus" --><!-- android:text="Color" /> -->
 
 
-<!-- <RelativeLayout -->
-<!-- android:id="@+id/mainLayout123" -->
-<!-- android:layout_width="match_parent" -->
-<!-- android:layout_height="match_parent" -->
-<!-- android:layout_below="@+id/spinner_fontSize" > -->
+    <!-- <RelativeLayout --><!-- android:id="@+id/mainLayout123" --><!-- android:layout_width="match_parent" --><!-- android:layout_height="match_parent" --><!-- android:layout_below="@+id/spinner_fontSize" > -->
 
 
-<!-- <ImageView -->
-<!-- android:id="@+id/ivTextimg" -->
-<!-- android:layout_width="wrap_content" -->
-<!-- android:layout_height="wrap_content" -->
-<!-- android:layout_centerHorizontal="true" -->
-<!-- android:layout_centerVertical="true" -->
-<!-- android:contentDescription="@string/app_name" -->
-<!-- android:padding="5dp" -->
-<!-- android:src="@drawable/img" /> -->
-<!-- </RelativeLayout> -->
+    <!-- <ImageView --><!-- android:id="@+id/ivTextimg" --><!-- android:layout_width="wrap_content" --><!-- android:layout_height="wrap_content" --><!-- android:layout_centerHorizontal="true" --><!-- android:layout_centerVertical="true" --><!-- android:contentDescription="@string/app_name" --><!-- android:padding="5dp" --><!-- android:src="@drawable/img" /> --><!-- </RelativeLayout> -->
 
 
-<!-- </RelativeLayout> -->
+    <!-- </RelativeLayout> -->
