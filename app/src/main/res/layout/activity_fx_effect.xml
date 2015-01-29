@@ -23,7 +23,7 @@
             android:layout_weight="1"
             android:contentDescription="@string/app_name"
             android:gravity="left"
-            android:src="@drawable/ic_cross" />
+            android:src="@drawable/close" />
 
         <TextView
             android:id="@+id/tvTitle"
@@ -42,7 +42,7 @@
             android:layout_weight="1"
             android:contentDescription="@string/app_name"
             android:gravity="right"
-            android:src="@drawable/ic_check" />
+            android:src="@drawable/correct" />
     </LinearLayout>
 
     <!-- <RelativeLayout -->

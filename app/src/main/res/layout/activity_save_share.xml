@@ -21,7 +21,7 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
             android:contentDescription="@string/app_name"
-            android:src="@drawable/ic_save" />
+            android:src="@drawable/save" />
     </LinearLayout>
 
     <ImageView
@@ -83,7 +83,7 @@
             android:contentDescription="@string/app_name"
             android:gravity="center"
             android:padding="40px"
-            android:src="@drawable/ic_share" />
+            android:src="@drawable/share" />
 
         <View
             android:id="@+id/center_view"
@@ -102,7 +102,7 @@
             android:contentDescription="@string/app_name"
             android:gravity="center"
             android:padding="40px"
-            android:src="@drawable/ic_home" />
+            android:src="@drawable/home" />
     </RelativeLayout>
 
     <include

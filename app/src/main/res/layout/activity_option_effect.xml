@@ -3,7 +3,7 @@
     android:id="@+id/mainLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white">
+    android:background="@drawable/background">
 
     <ImageView
         android:id="@+id/iv_Main"
@@ -109,7 +109,7 @@
             android:layout_weight="1"
             android:contentDescription="@string/app_name"
             android:gravity="left"
-            android:src="@drawable/ic_left"
+            android:src="@drawable/left_arrow"
             android:visibility="invisible" />
 
         <TextView
@@ -129,7 +129,7 @@
             android:layout_weight="1"
             android:contentDescription="@string/app_name"
             android:gravity="right"
-            android:src="@drawable/ic_right"
+            android:src="@drawable/right_arrow"
             android:visibility="visible" />
     </LinearLayout>
 
