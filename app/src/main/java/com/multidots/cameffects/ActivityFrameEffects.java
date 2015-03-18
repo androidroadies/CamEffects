@@ -55,7 +55,7 @@ public class ActivityFrameEffects extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_frame_effect);
-        LoadAdd();
+        //LoadAdd();
         initialization();
         mResources = getResources();
         // AppConfig.bitmapEffect =

@@ -30,7 +30,7 @@ public class ActivityOptionsIntents extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_option_effect);
         init();
-        LoadAdd();
+        //LoadAdd();
         CameraActivity = this;
         context = ActivityOptionsIntents.this;
         // sourceBitmap = AppConfig.mBitmapOriginal;
@@ -98,7 +98,7 @@ public class ActivityOptionsIntents extends BaseActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, ActivitySaveShare.class);
-                loadInterstitial(intent);
+                //loadInterstitial(intent);
 //                startActivity(intent);
                 // finish();
             }

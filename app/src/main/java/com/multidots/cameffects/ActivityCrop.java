@@ -329,7 +329,7 @@ public class ActivityCrop extends MonitoredActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_crop);
-        LoadAdd();
+        //LoadAdd();
         context = ActivityCrop.this;
         inflater = LayoutInflater.from(this);
 

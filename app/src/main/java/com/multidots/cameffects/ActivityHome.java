@@ -42,8 +42,8 @@ public class ActivityHome extends BaseActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_home);
 		context = ActivityHome.this;
-        LoadAdd();
-//        loadInterstitial(null);
+        //LoadAdd();
+        //loadInterstitial(null);
 
 		init();
 		Display mDisplay = getWindowManager().getDefaultDisplay();
@@ -305,7 +305,7 @@ public class ActivityHome extends BaseActivity {
 
     @Override
     public void onBackPressed() {
-        loadInterstitial(null);
+        //loadInterstitial(null);
         super.onBackPressed();
     }
 }

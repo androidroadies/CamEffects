@@ -46,7 +46,7 @@ public class ActivityFxEffects extends BaseActivity implements OnClickListener {
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fx_effect);
-        LoadAdd();
+        //LoadAdd();
         System.gc();
 
         if (AppConfig.isOrigenal)
